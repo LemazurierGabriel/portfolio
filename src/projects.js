@@ -31,9 +31,9 @@ export const projects = [
       },
     ],
     images: [
-      { src: '/projets/caf-fougeres/accueil.jpeg', alt: "Page d'accueil du site CAF Fougères, avec le titre « Grimper, c'est vivre autrement » sur un fond de roche animé" },
-      { src: '/projets/caf-fougeres/activites.jpeg', alt: 'Page Activités : horaires des séances en salle par jour et par public' },
-      { src: '/projets/caf-fougeres/connexion.jpeg', alt: "Page de connexion à l'espace membre" },
+      { src: 'projets/caf-fougeres/accueil.jpeg', alt: "Page d'accueil du site CAF Fougères, avec le titre « Grimper, c'est vivre autrement » sur un fond de roche animé" },
+      { src: 'projets/caf-fougeres/activites.jpeg', alt: 'Page Activités : horaires des séances en salle par jour et par public' },
+      { src: 'projets/caf-fougeres/connexion.jpeg', alt: "Page de connexion à l'espace membre" },
     ],
   },
   {
@@ -65,9 +65,9 @@ export const projects = [
       },
     ],
     images: [
-      { src: '/projets/pokedia/accueil.jpeg', alt: "Page d'accueil de Pokédia : Pikachu en pixel art sur l'écran vert de la Game Boy, avec un bouton Start Adventure" },
-      { src: '/projets/pokedia/galerie.jpeg', alt: 'Galerie façon Pokédex : cartes numérotées avec le nom et le type de chaque Pokémon' },
-      { src: '/projets/pokedia/donnees.jpeg', alt: 'Tableau des données des Pokémon, triable et avec recherche' },
+      { src: 'projets/pokedia/accueil.jpeg', alt: "Page d'accueil de Pokédia : Pikachu en pixel art sur l'écran vert de la Game Boy, avec un bouton Start Adventure" },
+      { src: 'projets/pokedia/galerie.jpeg', alt: 'Galerie façon Pokédex : cartes numérotées avec le nom et le type de chaque Pokémon' },
+      { src: 'projets/pokedia/donnees.jpeg', alt: 'Tableau des données des Pokémon, triable et avec recherche' },
     ],
   },
   {
@@ -99,9 +99,9 @@ export const projects = [
       },
     ],
     images: [
-      { src: '/projets/director-scape/accueil.jpeg', alt: "Page d'accueil de Director Scape : bannière d'un open space des années 70 plongé dans la pénombre" },
-      { src: '/projets/director-scape/pitch.jpeg', alt: "Présentation de l'expérience, avec les boutons S'inscrire et Découvrir le concept à côté d'une photo de salon d'entreprise rétro" },
-      { src: '/projets/director-scape/concept.jpeg', alt: 'Page Concept : pitch et détails pratiques avec pictogrammes' },
+      { src: 'projets/director-scape/accueil.jpeg', alt: "Page d'accueil de Director Scape : bannière d'un open space des années 70 plongé dans la pénombre" },
+      { src: 'projets/director-scape/pitch.jpeg', alt: "Présentation de l'expérience, avec les boutons S'inscrire et Découvrir le concept à côté d'une photo de salon d'entreprise rétro" },
+      { src: 'projets/director-scape/concept.jpeg', alt: 'Page Concept : pitch et détails pratiques avec pictogrammes' },
     ],
   },
   {
@@ -133,9 +133,9 @@ export const projects = [
       },
     ],
     images: [
-      { src: '/projets/inventeurs/accueil.jpeg', alt: "Page d'accueil « Les Inventeurs Célèbres » : grand titre blanc sur bandeau noir, menu à onglets et citation d'Edison" },
-      { src: '/projets/inventeurs/catalogue.jpeg', alt: "Catalogue en grille : photos d'archives en noir et blanc, année, catégorie en rouge et inventeur" },
-      { src: '/projets/inventeurs/recherche.jpeg', alt: 'Résultats de recherche pour Tesla : moteur à courant alternatif, bobine Tesla, dynamo et radio' },
+      { src: 'projets/inventeurs/accueil.jpeg', alt: "Page d'accueil « Les Inventeurs Célèbres » : grand titre blanc sur bandeau noir, menu à onglets et citation d'Edison" },
+      { src: 'projets/inventeurs/catalogue.jpeg', alt: "Catalogue en grille : photos d'archives en noir et blanc, année, catégorie en rouge et inventeur" },
+      { src: 'projets/inventeurs/recherche.jpeg', alt: 'Résultats de recherche pour Tesla : moteur à courant alternatif, bobine Tesla, dynamo et radio' },
     ],
   },
   {

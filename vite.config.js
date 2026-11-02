@@ -11,7 +11,7 @@ const inlineCss = {
     if (!html) return;
     for (const [name, file] of Object.entries(bundle)) {
       if (!name.endsWith('.css')) continue;
-      const link = new RegExp(`<link[^>]*href="/${name}"[^>]*>`);
+      const link = new RegExp(`<link[^>]*href="[^"]*${name}"[^>]*>`);
       html.source = html.source.replace(link, () => `<style>${file.source}</style>`);
       delete bundle[name];
     }
@@ -19,5 +19,8 @@ const inlineCss = {
 };
 
 export default defineConfig({
+  // chemins relatifs : le site fonctionne aussi bien à la racine qu'en sous-dossier
+  // (GitHub Pages le sert sur /portfolio/)
+  base: './',
   plugins: [inlineCss],
 });
