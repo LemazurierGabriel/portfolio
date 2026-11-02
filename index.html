@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gabriel — Portfolio</title>
+    <meta name="description" content="Portfolio de Gabriel, développeur front-end & designer basé à Troyes, en recherche de stage." />
+    <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-tight-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      @font-face { font-family: 'Inter'; font-weight: 400; font-display: swap; src: url('/fonts/inter-latin-400-normal.woff2') format('woff2'); }
+      @font-face { font-family: 'Inter'; font-weight: 500; font-display: swap; src: url('/fonts/inter-latin-500-normal.woff2') format('woff2'); }
+      @font-face { font-family: 'Inter Tight'; font-weight: 800; font-display: swap; src: url('/fonts/inter-tight-latin-800-normal.woff2') format('woff2'); }
+      @font-face { font-family: 'Instrument Serif'; font-weight: 400; font-display: swap; src: url('/fonts/instrument-serif-latin-400-normal.woff2') format('woff2'); }
+      @font-face { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/instrument-serif-latin-400-italic.woff2') format('woff2'); }
+    </style>
+  </head>
+  <body>
+    <h1 class="sr-only">Gabriel — portfolio</h1>
+
+    <div
+      id="stage"
+      class="stage"
+      tabindex="0"
+      role="region"
+      aria-label="Cartes du portfolio. Flèches pour naviguer, Entrée pour ouvrir."
+    ></div>
+
+    <div class="site" id="site">
+      <header class="site-header">
+        <a class="brand" href="#/">Gabriel <span>— Portfolio</span></a>
+        <p class="site-header__intro">Développeur front-end & designer<br />Troyes — en recherche de stage</p>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="#/projets">Projets</a>
+          <a href="#/a-propos">À propos</a>
+          <a href="#/contact">Contact</a>
+        </nav>
+      </header>
+
+      <footer class="hud">
+        <div aria-live="polite">
+          <p class="hud__kicker" id="home-kicker">N°01 · Six travaux choisis</p>
+          <div class="hud__mask"><p id="home-title" class="hud__title">Projets</p></div>
+        </div>
+        <div class="hud__controls">
+          <p class="hud__hint">Glisser pour explorer · Cliquer pour ouvrir</p>
+          <div class="hud__nav">
+            <button type="button" id="home-prev" aria-label="Carte précédente">←</button>
+            <span id="home-counter">01 / 04</span>
+            <button type="button" id="home-next" aria-label="Carte suivante">→</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="works-ui" id="works-ui" inert>
+      <div class="works-ui__top">
+        <a class="pill" href="#/"><span aria-hidden="true">←</span> Accueil</a>
+        <p class="works-ui__label">Projets</p>
+      </div>
+      <div class="hud hud--works">
+        <div aria-live="polite">
+          <p class="hud__kicker" id="works-kicker"></p>
+          <div class="hud__mask"><p id="works-title" class="hud__title"></p></div>
+        </div>
+        <div class="hud__controls">
+          <p class="hud__hint">Défiler pour tourner · Cliquer pour ouvrir</p>
+          <div class="hud__nav">
+            <button type="button" id="works-prev" aria-label="Projet précédent">↑</button>
+            <span id="works-counter"></span>
+            <button type="button" id="works-next" aria-label="Projet suivant">↓</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sr-only" aria-label="Plan du site">
+      <ul id="sitemap"></ul>
+    </nav>
+
+    <section id="page" class="page" role="dialog" aria-modal="true" aria-labelledby="page-title" inert>
+      <div class="page__bg"></div>
+      <img class="page__ghost" alt="" aria-hidden="true" />
+      <div class="page__scroll" tabindex="-1"></div>
+    </section>
+
+    <div class="grain" aria-hidden="true"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
