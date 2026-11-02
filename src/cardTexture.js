@@ -75,6 +75,56 @@ const motifs = {
     g.arc(cx, cy, r, 0, Math.PI * 2);
     g.stroke();
   },
+  // bougies de trading, vertes à la hausse et rouges à la baisse
+  candles(g, W, H, p) {
+    const n = 11;
+    const x0 = 110, x1 = W - 110;
+    const top = H * 0.14, bottom = H * 0.58;
+    // série de prix qui monte en zigzag, puis mise à l'échelle sur toute la hauteur
+    const closes = [0];
+    for (let i = 1; i <= n; i++) closes.push(closes[i - 1] + Math.sin(i * 1.9) * 1.4 + 0.55);
+    const lowest = Math.min(...closes) - 0.6, highest = Math.max(...closes) + 0.6;
+    const y = (v) => bottom - ((v - lowest) / (highest - lowest)) * (bottom - top);
+    for (let i = 0; i < n; i++) {
+      const open = closes[i];
+      const close = closes[i + 1];
+      const hi = Math.max(open, close) + 0.45;
+      const lo = Math.min(open, close) - 0.45;
+      const x = x0 + ((x1 - x0) * i) / (n - 1);
+      g.fillStyle = g.strokeStyle = close >= open ? p.accent : '#EF5350';
+      g.lineWidth = 6;
+      g.beginPath();
+      g.moveTo(x, y(hi));
+      g.lineTo(x, y(lo));
+      g.stroke();
+      g.fillRect(x - 24, y(Math.max(open, close)), 48, Math.max(10, Math.abs(y(open) - y(close))));
+    }
+  },
+  // cartes à collectionner en éventail, aux couleurs des raretés
+  fan(g, W, H, p) {
+    const cx = W / 2, cy = H * 0.62;
+    const colors = ['#8B5CF6', '#3B82F6', p.accent];
+    colors.forEach((color, i) => {
+      g.save();
+      g.translate(cx, cy);
+      g.rotate((i - 1) * 0.28);
+      g.fillStyle = '#1C1C24';
+      g.strokeStyle = color;
+      g.lineWidth = 10;
+      g.beginPath();
+      g.roundRect(-130, -470, 260, 360, 24);
+      g.fill();
+      g.stroke();
+      g.fillStyle = color;
+      g.fillRect(-100, -440, 110, 34);
+      g.restore();
+    });
+    g.fillStyle = p.accent;
+    g.font = '800 120px "Inter Tight"';
+    g.textAlign = 'center';
+    g.fillText('?', cx, cy - 245);
+    g.textAlign = 'left';
+  },
   // ampoule brutaliste, rayons rouges (inventions)
   bulb(g, W, H, p) {
     const cx = W * 0.5, cy = H * 0.3, r = W * 0.17;
